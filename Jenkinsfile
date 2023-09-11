@@ -6,7 +6,7 @@ pipeline {
 stages {
      stage('Git Checkout') {
        steps {
-         git 'https://github.com/aravindmurugesan2692/insuranceproject.git'
+         git branch: 'main', url: 'https://github.com/aravindmurugesan2692/insuranceproject.git'
              }
         }
      stage('Build Package') {
