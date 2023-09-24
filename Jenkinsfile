@@ -21,7 +21,7 @@ stages {
          }
      stage('Create Docker image of App') {
        steps {
-         sh 'docker build -t arvindmurugesan/insureme-app:1.0 .'
+         sh 'docker build -t arvindmurugesan/insureme-app:2.0 .'
              }
          }
      stage('Docker Image Push') {
@@ -29,7 +29,7 @@ stages {
          withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'docker_password', usernameVariable: 'docker_user')]) {
          sh 'docker login -u ${docker_user} -p ${docker_password}'
         }
-         sh 'docker push arvindmurugesan/insureme-app:1.0'
+         sh 'docker push arvindmurugesan/insureme-app:2.0'
    }    
      } 
      stage('Application Deploy-container') {
